@@ -29,6 +29,7 @@ opt.mouse = "a"
 opt.number = true
 opt.numberwidth = 2
 opt.ruler = false
+opt.relativenumber = true
 
 -- disable nvim intro
 opt.shortmess:append "sI"
@@ -48,6 +49,7 @@ opt.updatetime = 250
 opt.whichwrap:append "<>[]hl"
 
 g.mapleader = " "
+g.luasnippets_path = "~/.config/nvim/lua/custom/snippets"
 
 -- disable some builtin vim plugins
 local default_plugins = {
