@@ -4,8 +4,6 @@
 	<a href="https://nvchad.github.io/">Home</a>
 </div> 
 
-<div align="center">
-
 ## UI related plugins used
 
 <details><summary> <b>Images (Click to expand!)</b></summary>
