@@ -14,9 +14,14 @@ end
 
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "clangd", "tsserver", "rust_analyzer", "sqlls", "astro", "svelte", "eslint", "tailwindcss"}
+local servers =
+  { "html", "cssls", "clangd", "tsserver", "rust_analyzer", "sqlls", "astro", "svelte", "eslint", "tailwindcss" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do

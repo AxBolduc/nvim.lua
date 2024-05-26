@@ -26,17 +26,17 @@ return {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = require "configs.mason"
+    opts = require "configs.mason",
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = require "configs.treesitter"
+    opts = require "configs.treesitter",
   },
 
   {
     "nvim-tree/nvim-tree.lua",
-    opts = require "configs.nvimtree"
+    opts = require "configs.nvimtree",
   },
 
   -- Install a plugin
@@ -93,9 +93,43 @@ return {
   {
     "anurag3301/nvim-platformio.lua",
     dependencies = {
-        { "akinsho/nvim-toggleterm.lua" },
-        { "nvim-telescope/telescope.nvim" },
-        { "nvim-lua/plenary.nvim" },
+      { "akinsho/nvim-toggleterm.lua" },
+      { "nvim-telescope/telescope.nvim" },
+      { "nvim-lua/plenary.nvim" },
+    },
+  },
+  -- {
+  --   "github/copilot.vim",
+  --   event = { "BufReadPost", "BufNewFile" },
+  -- },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require "configs.copilot"
+    end,
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+    },
+    event = { "BufReadPost", "BufNewFile" },
+    config = function()
+      require("ufo").setup()
+    end,
+  },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+    event = {"BufReadPost", "BufNewFile"},
+    dependencies = {
+      { "zbirenbaum/copilot.lua" },
+      { "nvim-lua/plenary.nvim" },
+    },
+    opts = {
+      debug = true,
     },
   }
 
