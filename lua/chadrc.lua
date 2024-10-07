@@ -6,8 +6,6 @@ local M = {}
 
 M.ui = {
   -- theme = "onedark",
-  theme = "nightowl",
-  theme_toggle = { "nightowl", "one_light" },
 
   hl_override = {
     CursorLine = {
@@ -20,6 +18,11 @@ M.ui = {
   hl_add = {
     NvimTreeOpenedFolderName = { fg = "green", bold = true },
   },
+}
+
+M.base46 = {
+  theme = "yoru",
+  theme_toggle = { "yoru", "one_light" },
 }
 
 return M

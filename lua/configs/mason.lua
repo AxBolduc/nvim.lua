@@ -1,17 +1,18 @@
 local M = {}
 
 M.ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
+  -- lua stuff
+  "lua-language-server",
+  "stylua",
 
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "deno",
-
-    "rust-analyzer"
+  -- web dev stuff
+  "css-lsp",
+  "html-lsp",
+  "typescript-language-server",
+  "prettierd",
+  "eslint-lsp",
+  "eslint_d",
+  "js-debug-adapter"
 }
 
 return M

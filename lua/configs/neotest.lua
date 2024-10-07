@@ -4,7 +4,7 @@ require('neotest').setup({
   },
   adapters = {
     require('neotest-jest')({
-      jestCommand = "yarn jest",
+      jestCommand = "npm test",
       jestConfigFile = function ()
         local file = vim.fn.expand('%:p')
 
@@ -12,7 +12,7 @@ require('neotest').setup({
           return vim.fn.getcwd() .. "/test/jest-e2e.js"
         end
 
-        return vim.fn.getcwd() .. "/jest.config.ts"
+        return vim.fn.getcwd() .. "/jest.config.js"
       end,
       jest_test_discovery = false,
       env = { CI = true },

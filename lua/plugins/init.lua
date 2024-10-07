@@ -86,29 +86,12 @@ return {
     end,
   },
   {
-    "microsoft/vscode-js-debug",
-    -- tag = "v1.74.1",
-    build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-  },
-  {
     "anurag3301/nvim-platformio.lua",
     dependencies = {
       { "akinsho/nvim-toggleterm.lua" },
       { "nvim-telescope/telescope.nvim" },
       { "nvim-lua/plenary.nvim" },
     },
-  },
-  -- {
-  --   "github/copilot.vim",
-  --   event = { "BufReadPost", "BufNewFile" },
-  -- },
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require "configs.copilot"
-    end,
   },
   {
     "kevinhwang91/nvim-ufo",
@@ -121,44 +104,37 @@ return {
     end,
   },
   {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
-    event = {"BufReadPost", "BufNewFile"},
-    dependencies = {
-      { "zbirenbaum/copilot.lua" },
-      { "nvim-lua/plenary.nvim" },
+    "hedyhli/outline.nvim",
+    lazy = true,
+    cmd = { "Outline", "OutlineOpen" },
+    keys = { -- Example mapping to toggle outline
+      { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
     },
+    opts = { -- Your setup opts here
+    },
+    -- { "yioneko/nvim-yati", event = { "BufReadPost", "BufNewFile" } },
+    -- { "yioneko/vim-tmindent",},
+  },
+  {
+    "f-person/git-blame.nvim",
+    event = "VeryLazy",
     opts = {
-      debug = true,
+      enabled = true, -- if you want to enable the plugin
+      message_template = " <summary> • <date> • <author> • <<sha>>", -- template for the blame message, check the Message template section for more options
+      date_format = "%m-%d-%Y %H:%M:%S", -- template for the date, check Date format section for more options
+      virtual_text_column = 1, -- virtual text start column, check Start virtual text at column section for more options
     },
-  }
-
-  -- These are some examples, uncomment them if you want to see them work!
+  },
   -- {
-  --   "neovim/nvim-lspconfig",
-  --   config = function()
-  --     require("nvchad.configs.lspconfig").defaults()
-  --     require "configs.lspconfig"
-  --   end,
-  -- },
-  --
-  -- {
-  -- 	"williamboman/mason.nvim",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"lua-language-server", "stylua",
-  -- 			"html-lsp", "css-lsp" , "prettier"
-  -- 		},
-  -- 	},
-  -- },
-  --
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  --   "CopilotC-Nvim/CopilotChat.nvim",
+  --   branch = "canary",
+  --   event = {"BufReadPost", "BufNewFile"},
+  --   dependencies = {
+  --     { "zbirenbaum/copilot.lua" },
+  --     { "nvim-lua/plenary.nvim" },
+  --   },
+  --   opts = {
+  --     debug = true,
+  --   },
+  -- }
 }

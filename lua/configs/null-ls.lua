@@ -7,7 +7,15 @@ end
 local b = null_ls.builtins
 
 local sources = {
-  b.formatting.prettierd,
+  b.formatting.prettierd.with({
+    condition = function(utils) 
+      return utils.has_file({".prettierrc"})
+    end,
+    filetypes={
+      'typescript', 'javascript', 'typescriptreact', 'javascriptreact'
+    }
+  }),
+
   -- Lua
   b.formatting.stylua,
   -- cpp

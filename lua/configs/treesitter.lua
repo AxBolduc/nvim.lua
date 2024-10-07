@@ -13,14 +13,10 @@ M = {
     "markdown_inline",
     "rust",
     "typescript",
-    "tsx"
+    "tsx",
   },
   indent = {
-    enable = true,
-    disable = {
-      "python",
-      "rust"
-    },
+    enable = true
   },
 }
 
