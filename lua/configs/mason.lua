@@ -12,7 +12,10 @@ M.ensure_installed = {
   "prettierd",
   "eslint-lsp",
   "eslint_d",
-  "js-debug-adapter"
+  "js-debug-adapter",
+
+  "terraform-ls",
+  "gopls"
 }
 
 return M

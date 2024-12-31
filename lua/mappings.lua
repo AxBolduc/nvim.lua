@@ -50,4 +50,6 @@ end, {desc = 'DAP UI'})
 --nvimtree
 map('n', '<leader>e', '<cmd>NvimTreeToggle <CR>', {desc = "Toggle NvimTree"})
 
+map('n', '<leader>X', function() require('nvchad.tabufline').closeAllBufs(true) end, {desc = "Close all tabs"})
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

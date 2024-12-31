@@ -112,8 +112,6 @@ return {
     },
     opts = { -- Your setup opts here
     },
-    -- { "yioneko/nvim-yati", event = { "BufReadPost", "BufNewFile" } },
-    -- { "yioneko/vim-tmindent",},
   },
   {
     "f-person/git-blame.nvim",
@@ -125,16 +123,19 @@ return {
       virtual_text_column = 1, -- virtual text start column, check Start virtual text at column section for more options
     },
   },
-  -- {
-  --   "CopilotC-Nvim/CopilotChat.nvim",
-  --   branch = "canary",
-  --   event = {"BufReadPost", "BufNewFile"},
-  --   dependencies = {
-  --     { "zbirenbaum/copilot.lua" },
-  --     { "nvim-lua/plenary.nvim" },
-  --   },
-  --   opts = {
-  --     debug = true,
-  --   },
-  -- }
+  {
+    "supermaven-inc/supermaven-nvim",
+    lazy = false,
+    config = function()
+      require("supermaven-nvim").setup {
+        keymaps = {
+          accept_suggestion = "«",
+        },
+        color = {
+          suggestion_color = "#cccccc",
+          cterm = 250,
+        }
+      }
+    end,
+  },
 }

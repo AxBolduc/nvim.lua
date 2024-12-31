@@ -23,7 +23,7 @@ capabilities.textDocument.foldingRange = {
 
 local lspconfig = require "lspconfig"
 local servers =
-  { "html", "cssls", "ts_ls", "rust_analyzer", "sqlls", "eslint" }
+  { "html", "cssls", "ts_ls", "rust_analyzer", "sqlls", "eslint", "terraformls", "gopls", "tailwindcss" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -33,7 +33,6 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
 -- rust_analyzer
 lspconfig["rust_analyzer"].setup {
   on_attach = on_attach,

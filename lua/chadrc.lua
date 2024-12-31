@@ -21,8 +21,8 @@ M.ui = {
 }
 
 M.base46 = {
-  theme = "yoru",
-  theme_toggle = { "yoru", "one_light" },
+  theme = "everblush",
+  theme_toggle = { "everblush", "everblush" },
 }
 
 return M
